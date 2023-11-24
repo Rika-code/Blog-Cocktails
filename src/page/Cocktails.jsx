@@ -1,18 +1,16 @@
 import { useState } from "react";
 
 function Cocktails () {
-    const [cocktails, setCocktails] = useState(null); 
+    const [cocktails, setCocktails] = useState(null);
 
-    if (!cocktails) {                                                 
-    fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=") 
-    .then((cocktailsResponse) => {  
-        return cocktailsResponse.json(); 
-    })
+    if (!cocktails) {        
+        (async () => {
+            const cocktailsResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=");
+            const cocktailsInJs = await cocktailsResponse.json();
+            setCocktails(cocktailsInJs.drinks);
 
-    .then((cocktailsInJs) => {  
-        console.log(cocktailsInJs); 
-        setCocktails(cocktailsInJs.drinks) 
-    })}
+        })();
+    }
 
     return (
         <main>
