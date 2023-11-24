@@ -5,12 +5,11 @@ const [categories, setCategories] = useState(null)
 
 useEffect(() => {
     (async () => {
-        const categoriesResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?");
+        const categoriesResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?c=list");
         const categoriesInJs = await categoriesResponse.json();
         setCategories(categoriesInJs.drinks);
 })()
-     },
-     )([]);
+     },[]);
 
 
 return (
@@ -21,11 +20,11 @@ return (
 {categories.map((category) => { 
   return (
     <div>
-        <h2>{category.strDrink}</h2>  
+        <h2>{category.strCategory}</h2>  
     </div>
     
      
-  );
+  )
 })}
 </>
 

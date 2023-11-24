@@ -9,8 +9,7 @@ function Cocktails () {
             const cocktailsInJs = await cocktailsResponse.json();
             setCocktails(cocktailsInJs.drinks);
 })()
-         },
-         []);
+         },[]);
     
 
     return (
@@ -26,7 +25,7 @@ function Cocktails () {
         </div>
         
          
-      );
+      )
     })}
     </>
 
