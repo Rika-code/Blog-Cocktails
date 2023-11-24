@@ -23,7 +23,7 @@ function CocktailsRandom () {
          {randomCocktail ? (
              <article>
                 <p> {randomCocktail.strDrink} </p>
-                <img src={coktailRandom.strDrinkThumb} alt={coktailRandom.strDrink} />
+                <img src={randomCocktail.strDrinkThumb} alt={randomCocktail.strDrink} />
              </article>
          ) : (
           <p>Cocktail en cours de préparation...</p>

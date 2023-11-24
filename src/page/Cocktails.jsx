@@ -8,8 +8,9 @@ function Cocktails () {
             const cocktailsResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=");
             const cocktailsInJs = await cocktailsResponse.json();
             setCocktails(cocktailsInJs.drinks);
-})
-         })([]);
+})()
+         },
+         []);
     
 
     return (
@@ -30,7 +31,7 @@ function Cocktails () {
     </>
 
    ) : (
-    <p> Cocktails en cours de chargement...</p>
+    <p>Cocktails en cours de chargement...</p>
    )}
 </main>
 )
