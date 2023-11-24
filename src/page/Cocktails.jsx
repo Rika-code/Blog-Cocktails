@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Cocktails () {
     const [cocktails, setCocktails] = useState(null);
 
-    if (!cocktails) {        
+   useEffect(() => {
         (async () => {
             const cocktailsResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=");
             const cocktailsInJs = await cocktailsResponse.json();
             setCocktails(cocktailsInJs.drinks);
-
-        })();
-    }
+})
+         })([]);
+    
 
     return (
         <main>
