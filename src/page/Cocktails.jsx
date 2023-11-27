@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
+import CocktailsCard from "../components/CocktailsCard";
 
 
 function Cocktails () {
@@ -20,16 +21,8 @@ function Cocktails () {
     <>
     <h1>Voici le liste des cocktails :</h1>
     {cocktails.map((cocktail) => { 
-      return (
-        <div>
-          <h2>{cocktail.strDrink}</h2> 
-          <img src={cocktail.strDrinkThumb}/>
-          <Link to={`/cocktails/details/${cocktail.idDrink}`}> Détails du cocktail</Link>
-             
-        </div>
-        
-         
-      )
+      return <CocktailsCard cocktailDisplay={cocktail}/>
+       
     })}
     </>
 
