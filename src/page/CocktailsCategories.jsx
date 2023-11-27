@@ -7,6 +7,8 @@ useEffect(() => {
     (async () => {
         const categoriesResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?c=list");
         const categoriesInJs = await categoriesResponse.json();
+
+        
         setCategories(categoriesInJs.drinks);
 })()
      },[]);
