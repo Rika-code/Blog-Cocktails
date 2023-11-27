@@ -5,6 +5,7 @@ import Cocktails from './page/Cocktails';
 import CocktailsRandom from './page/CoktailsRandom';
 import CocktailsCategories from './page/CocktailsCategories';
 import IngredientsPage from './page/IngredientsPage';
+import CocktailsDetails from './page/CocktailsDetails';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <Route path ="/random" element = {<CocktailsRandom/>}/>
     <Route path ="/category" element = {<CocktailsCategories/>}/>
     <Route path ="/ingredients" element = {<IngredientsPage/>}/>
+    <Route path ="/cocktails/details/:id" element ={<CocktailsDetails/>}/>
   </Routes>
   </BrowserRouter>
   );

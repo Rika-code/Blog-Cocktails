@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import {Link} from "react-router-dom";
+
 
 function Cocktails () {
     const [cocktails, setCocktails] = useState(null);
@@ -20,8 +22,10 @@ function Cocktails () {
     {cocktails.map((cocktail) => { 
       return (
         <div>
-            <h2>{cocktail.strDrink}</h2>  
-             <img src={cocktail.strDrinkThumb}/>
+          <h2>{cocktail.strDrink}</h2> 
+          <img src={cocktail.strDrinkThumb}/>
+          <Link to={`/cocktails/details/${cocktail.idDrink}`}> Détails du cocktail</Link>
+             
         </div>
         
          
